@@ -21,13 +21,14 @@ def storeTraining(text, label):
 #storeTraining(training, label)
 print("input genre file name\n")
 genre_file = input()
-# CHANGE THIS to the training bucket to store it in
 label = genre_file
 file = open("training_data_" + genre_file + ".txt", "r")
 text = file.read()
 text = text.replace("{", "")
 text = text.split("}")
 file.close()
+for i in range(20):
+    text[i] = text[i][:1000]
 for i in range(20):
     training = text[i]
     storeTraining(training, label)
