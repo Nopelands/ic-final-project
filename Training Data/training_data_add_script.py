@@ -23,7 +23,7 @@ label = "action"
 #storeTraining(training, label)
 print("input genre file name\n")
 genre_file = input()
-file = open(genre_file + "_data_action.txt", "r")
+file = open("training_data_" + genre_file + ".txt", "r")
 text = file.read()
 text = text.replace("{", "")
 text = text.split("}")
