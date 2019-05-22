@@ -17,12 +17,12 @@ def storeTraining(text, label):
 # CHANGE THIS to the text that you want to store
 #training = "The text that you want to store"
 
-# CHANGE THIS to the training bucket to store it in
-label = "action"
 
 #storeTraining(training, label)
 print("input genre file name\n")
 genre_file = input()
+# CHANGE THIS to the training bucket to store it in
+label = genre_file
 file = open("training_data_" + genre_file + ".txt", "r")
 text = file.read()
 text = text.replace("{", "")
