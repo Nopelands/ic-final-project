@@ -1,7 +1,6 @@
-file = open("training_data_action.txt", "r")
+file = open("english_words.txt", "r")
 text = file.read()
-text = text.replace("{", "")
-text = text.split("}")
-for i in range(20):
+text = text.split("\n")
+for i in range(250):
     print(text[i])
 file.close()
