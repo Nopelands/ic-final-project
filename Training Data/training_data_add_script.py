@@ -4,7 +4,7 @@ import requests
 # This function will store your text in one of the training
 # buckets in your machine learning project
 def storeTraining(text, label):
-    key = "f2474770-7d64-11e9-96e3-39e2771d810d01764370-411f-412e-8063-71409067b106"
+    key = "547555f0-885e-11e9-a888-89aa3aa5808d2d690b6c-eeef-4353-b91d-6cb2a3d72896"
     url = "https://machinelearningforkids.co.uk/api/scratch/" + key + "/train"
 
     response = requests.post(url, json={"data": text, "label": label})
@@ -19,12 +19,13 @@ def storeTraining(text, label):
 
 
 #storeTraining(training, label)
-label = "spanish"
-file = open("spanish_words.txt", "r")
+language = input("enter file: ")
+label = language
+file = open(language + ".txt", "r", encoding="latin-1")
 text = file.read()
-text = text.split("\n")
+text = text.split("\n\n")
 file.close()
-for i in range(250):
+for i in text:
     print(i)
-    training = text[i]
+    training = i
     storeTraining(training, label)
