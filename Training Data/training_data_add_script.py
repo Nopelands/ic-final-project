@@ -14,10 +14,6 @@ def storeTraining(text, label):
         print(response.json())
 
 
-# CHANGE THIS to the text that you want to store
-#training = "The text that you want to store"
-
-
 #storeTraining(training, label)
 language = input("enter file: ")
 label = language

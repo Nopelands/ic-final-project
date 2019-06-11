@@ -9,19 +9,19 @@ def classify(text):
     response = requests.get(url, params={ "data" : text })
 
     if response.ok:
-        responseData = response.json()
-        topMatch = responseData[0]
-        return topMatch
+        response_data = response.json()
+        top_match = response_data[0]
+        return top_match
     else:
         response.raise_for_status()
 
 
-# CHANGE THIS to something you want your machine learning model to classify
-demo = classify(input("type your review: \n"))
+user_input = ""
+while user_input != "quit":
+    user_input = input("type your review: \n")
+    demo = classify(user_input)
 
-label = demo["class_name"]
-confidence = demo["confidence"]
+    label = demo["class_name"]
+    confidence = demo["confidence"]
 
-
-# CHANGE THIS to do something different with the result
-print ("result: '%s' with %d%% confidence" % (label, confidence))
+    print ("result: '%s' with %d%% confidence\n" % (label, confidence))
