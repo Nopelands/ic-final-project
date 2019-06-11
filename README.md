@@ -1,2 +1,2 @@
 # ic-final-project
-Ai applied to anime genre recognition by sinopsis
+Ai applied to gaming reviews type recognition.
